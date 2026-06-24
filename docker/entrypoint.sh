@@ -25,6 +25,7 @@ echo "  ✓ Storage symlink ready"
 
 # ─── Cache optimization ───────────────────────────────────────────────────────
 echo "[4/6] Optimizing caches..."
+php artisan package:discover --ansi
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache

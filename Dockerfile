@@ -80,10 +80,6 @@ COPY --from=node-builder /app/public/build ./public/build
 # Copy all application source code
 COPY . .
 
-# Run composer scripts now that artisan file is available
-RUN php artisan package:discover --ansi || true \
-    && composer dump-autoload --optimize --no-scripts
-
 # ─── Nginx configuration ─────────────────────────────────────
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 # Remove default nginx site
