@@ -20,7 +20,9 @@ class DataAwalSeeder extends Seeder
         ];
 
         foreach ($kriteria as $k) {
-            Kriteria::create($k);
+            if (!Kriteria::where('kode_kriteria', $k['kode_kriteria'])->exists()) {
+                Kriteria::create($k);
+            }
         }
 
         // ALTERNATIF
@@ -35,7 +37,9 @@ class DataAwalSeeder extends Seeder
         ];
 
         foreach ($alternatif as $a) {
-            Alternatif::create($a);
+            if (!Alternatif::where('kode_alternatif', $a['kode_alternatif'])->exists()) {
+                Alternatif::create($a);
+            }
         }
     }
 }
