@@ -1,0 +1,43 @@
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Development tools
+.editorconfig
+.phpactor.json
+.phpunit.result.cache
+/.vscode
+/.idea
+/.nova
+/.zed
+/.fleet
+/.phpunit.cache
+
+# Laravel development artifacts
+.env
+.env.*
+/storage/pail
+/public/hot
+
+# Node dependencies (will be installed during build)
+/node_modules
+
+# PHP dependencies (will be installed during build)
+/vendor
+
+# Test files
+/tests
+phpunit.xml
+
+# Documentation
+README.md
+DEPLOYMENT.md
+
+# Logs
+*.log
+/storage/logs/*
+
+# Local Docker files
+docker-compose*.yml
+.env.docker

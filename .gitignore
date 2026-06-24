@@ -39,5 +39,3 @@ Thumbs.db
 "/public/uploads/" 
 "/.env.backup" 
 "/.phpunit.cache" 
-"composer.lock" 
-"package-lock.json" 
