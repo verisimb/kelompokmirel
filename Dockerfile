@@ -71,14 +71,14 @@ RUN echo "upload_max_filesize = 50M" >> "$PHP_INI_DIR/conf.d/laravel.ini" \
 # ─── Application files ────────────────────────────────────────
 WORKDIR /var/www/html
 
-# Copy vendor from composer-builder
+# 1. Copy all application source code
+COPY . .
+
+# 2. Override vendor with composer-built (production, no-dev)
 COPY --from=composer-builder /app/vendor ./vendor
 
-# Copy built frontend assets from node-builder
+# 3. Override public/build with freshly compiled Vite assets
 COPY --from=node-builder /app/public/build ./public/build
-
-# Copy all application source code
-COPY . .
 
 # ─── Nginx configuration ─────────────────────────────────────
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf

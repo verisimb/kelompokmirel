@@ -26,6 +26,10 @@
 # PHP dependencies (will be installed during build)
 /vendor
 
+# Built assets (will be built fresh by node-builder stage)
+/public/build
+/public/hot
+
 # Test files
 /tests
 phpunit.xml
