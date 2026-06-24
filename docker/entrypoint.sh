@@ -18,6 +18,12 @@ echo "[2/6] Running migrations..."
 php artisan migrate --force --no-interaction
 echo "  ✓ Migrations done"
 
+# ─── Seed data awal (idempotent - sudah ada guard if(!exists()) di seeder) ────
+echo "[2b] Seeding initial data..."
+php artisan db:seed --class=AdminSeeder --force --no-interaction
+php artisan db:seed --class=DataAwalSeeder --force --no-interaction
+echo "  ✓ Seeding done"
+
 # ─── Create storage symlink ───────────────────────────────────────────────────
 echo "[3/6] Creating storage symlink..."
 php artisan storage:link --force 2>/dev/null || true
