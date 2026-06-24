@@ -1,32 +1,5 @@
 
----
 
-
-
-
-
-```bash
-echo "# SPK E-Wallet - Sistem Pendukung Keputusan Pemilihan E-Wallet Terbaik" > README.md
-echo "" >> README.md
-echo "## Prasyarat" >> README.md
-echo "- PHP 8.2+" >> README.md
-echo "- Composer" >> README.md
-echo "- Node.js & NPM" >> README.md
-echo "" >> README.md
-echo "## Cara Install" >> README.md
-echo "1. Clone repository" >> README.md
-echo "2. composer install" >> README.md
-echo "3. npm install" >> README.md
-echo "4. cp .env.example .env" >> README.md
-echo "5. php artisan key:generate" >> README.md
-echo "6. php artisan migrate" >> README.md
-echo "7. php artisan db:seed --class=DataAwalSeeder" >> README.md
-echo "8. npm run build" >> README.md
-echo "9. php artisan serve" >> README.md
-
-git add README.md
-git commit -m "Add README.md with installation guide"
-git push
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
