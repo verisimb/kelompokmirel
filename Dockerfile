@@ -19,13 +19,14 @@ FROM composer:2 AS composer-builder
 WORKDIR /app
 
 COPY composer.json composer.lock ./
-RUN composer install \
-    --no-dev \
-    --no-interaction \
-    --no-progress \
-    --prefer-dist \
-    --optimize-autoloader \
-    --no-scripts
+RUN composer config --global http-multiplexing false \
+    && composer config --global prefer-ipv4 true \
+    && composer install \
+        --no-interaction \
+        --no-progress \
+        --prefer-dist \
+        --optimize-autoloader \
+        --no-scripts
 
 # ============================================================
 # Stage 3: Production image
