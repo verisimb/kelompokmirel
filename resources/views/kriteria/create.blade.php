@@ -37,7 +37,7 @@
                         <option value="C9">C9 - Fitur</option>
                         <option value="C10">C10 - Kecepatan</option>
                     </datalist>
-                    <small class="text-muted">💡 Ketik kode atau pilih dari daftar. Bisa juga buat sendiri!</small>
+                    <small class="text-muted">Ketik kode atau pilih dari daftar. Bisa juga buat sendiri!</small>
                     @error('kode_kriteria')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -70,7 +70,7 @@
                         <option value="Biaya Admin">
                         <option value="Kualitas">
                     </datalist>
-                    <small class="text-muted">💡 Ketik nama atau pilih dari daftar. Bisa juga buat sendiri!</small>
+                    <small class="text-muted">Ketik nama atau pilih dari daftar. Bisa juga buat sendiri!</small>
                     @error('nama_kriteria')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

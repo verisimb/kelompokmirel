@@ -7,6 +7,7 @@ use App\Models\Alternatif;
 use App\Models\Penilaian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class PenilaianController extends Controller
 {
@@ -30,54 +31,59 @@ class PenilaianController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'nilai.*.*' => 'nullable|numeric'
-        ]);
+        try {
+            // Validasi: semua nilai wajib diisi dan numerik
+            $rules = [];
+            $messages = [];
+            $nilaiArray = $request->input('nilai', []);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        $nilaiArray = $request->input('nilai', []);
-
-        if (empty($nilaiArray)) {
-            return redirect()->back()
-                ->with('error', 'Tidak ada data penilaian yang dikirim!')
-                ->withInput();
-        }
-
-        $count = 0;
-        foreach ($nilaiArray as $alternatifId => $kriteriaValues) {
-            foreach ($kriteriaValues as $kriteriaId => $nilai) {
-                if ($nilai === null || $nilai === '') {
-                    continue;
+            foreach ($nilaiArray as $altId => $kriteriaValues) {
+                foreach ($kriteriaValues as $kritId => $nilai) {
+                    $fieldName = "nilai.{$altId}.{$kritId}";
+                    $rules[$fieldName] = 'required|numeric';
+                    $messages[$fieldName . '.required'] = "Nilai untuk alternatif ID {$altId} dan kriteria ID {$kritId} wajib diisi.";
+                    $messages[$fieldName . '.numeric'] = "Nilai harus berupa angka.";
                 }
-
-                $penilaian = Penilaian::where('alternatif_id', $alternatifId)
-                    ->where('kriteria_id', $kriteriaId)
-                    ->first();
-
-                if ($penilaian) {
-                    $penilaian->update(['nilai' => $nilai]);
-                } else {
-                    Penilaian::create([
-                        'alternatif_id' => $alternatifId,
-                        'kriteria_id' => $kriteriaId,
-                        'nilai' => $nilai
-                    ]);
-                }
-                $count++;
             }
-        }
 
-        if ($count === 0) {
+            $validator = Validator::make($request->all(), $rules, $messages);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            // Proses simpan
+            $count = 0;
+            foreach ($nilaiArray as $alternatifId => $kriteriaValues) {
+                foreach ($kriteriaValues as $kriteriaId => $nilai) {
+                    $penilaian = Penilaian::where('alternatif_id', $alternatifId)
+                        ->where('kriteria_id', $kriteriaId)
+                        ->first();
+
+                    if ($penilaian) {
+                        $penilaian->update(['nilai' => $nilai]);
+                    } else {
+                        Penilaian::create([
+                            'alternatif_id' => $alternatifId,
+                            'kriteria_id' => $kriteriaId,
+                            'nilai' => $nilai
+                        ]);
+                    }
+                    $count++;
+                }
+            }
+
+            return redirect()->route('penilaian.index')
+                ->with('success', $count . ' penilaian berhasil disimpan!');
+
+        } catch (\Exception $e) {
+            Log::error('Error saat menyimpan penilaian: ' . $e->getMessage());
+            Log::error($e->getTraceAsString());
+
             return redirect()->back()
-                ->with('warning', 'Tidak ada nilai yang valid untuk disimpan!');
+                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
-
-        return redirect()->route('penilaian.index')
-            ->with('success', $count . ' penilaian berhasil disimpan!');
     }
 }

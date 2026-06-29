@@ -6,7 +6,7 @@
 @section('content')
 <div class="card border-0 shadow-sm" style="border-radius: 16px;">
     <div class="card-body">
-        <h5 class="card-title fw-semibold" style="color: #1e293b;">✏️ Edit E-Wallet: {{ $alternatif->kode_alternatif }}</h5>
+        <h5 class="card-title fw-semibold" style="color: #1e293b;">Edit E-Wallet: {{ $alternatif->kode_alternatif }}</h5>
         <hr>
 
         <form action="{{ route('alternatif.update', $alternatif->id) }}" method="POST">

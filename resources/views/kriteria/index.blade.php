@@ -7,7 +7,7 @@
 <div class="card border-0 shadow-sm" style="border-radius: 16px;">
     <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="card-title fw-semibold" style="color: #1e293b;"> Daftar Kriteria</h5>
+            <h5 class="card-title fw-semibold" style="color: #1e293b;">Daftar Kriteria</h5>
             <a href="{{ route('kriteria.create') }}" class="btn btn-primary" style="background: #4F46E5; border: none; border-radius: 10px; padding: 8px 20px;">
                 <i class="bi bi-plus-circle me-1"></i> Tambah Kriteria
             </a>
@@ -55,11 +55,8 @@
                             @endif
                         </td>
                         <td>
-                            @if($item->satuan)
-                            <span class="badge bg-info bg-opacity-10 text-info px-3 py-2" style="font-weight: 500;">{{ $item->satuan }}</span>
-                            @else
-                            <span class="text-muted">-</span>
-                            @endif
+                            {{-- Satuan sebagai teks biasa --}}
+                            {{ $item->satuan ?? '-' }}
                         </td>
                         <td>
                             <a href="{{ route('kriteria.edit', $item->id) }}" class="btn btn-warning btn-sm" style="border-radius: 8px;">

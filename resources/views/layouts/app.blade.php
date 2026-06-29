@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SPK E-Wallet - @yield('title', 'Dashboard')</title>
 
+    <!-- ===== FAVICON PNG ===== -->
+    <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('logo.png') }}">
+
     <!-- Vite Asset -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -70,10 +74,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            color: white;
             box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25);
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        /* GAMBAR LOGO DI DALAM LINGKARAN UNGU */
+        .sidebar .brand .logo-circle img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            border-radius: 6px;
         }
 
         .sidebar .brand .brand-text {
@@ -277,8 +288,12 @@
             .sidebar .brand .brand-icon .logo-circle {
                 width: 38px;
                 height: 38px;
-                font-size: 16px;
                 margin: 0 auto;
+            }
+
+            .sidebar .brand .logo-circle img {
+                width: 24px;
+                height: 24px;
             }
 
             .sidebar .brand {
@@ -381,8 +396,9 @@
     <nav class="sidebar">
         <div class="brand">
             <div class="brand-icon">
+                <!-- LOGO PNG DI DALAM LINGKARAN UNGU -->
                 <div class="logo-circle">
-                    <i class="bi bi-wallet2"></i>
+                    <img src="{{ asset('images/logo.png') }}" alt="SPK E-Wallet">
                 </div>
                 <div>
                     <div class="brand-text"><span>E-Wallet</span></div>
@@ -424,7 +440,6 @@
             <a href="{{ route('ranking.index') }}" class="nav-link {{ request()->routeIs('ranking*') ? 'active' : '' }}">
                 <i class="bi bi-trophy-fill"></i>
                 <span>Ranking</span>
-                <span class="badge-nav">Terbaru</span>
             </a>
         </div>
     </nav>
@@ -432,7 +447,7 @@
     <!-- ===== MAIN CONTENT ===== -->
     <div class="main-content">
 
-        <!-- ===== NAVBAR TOP (INI YANG ANDA TANYAKAN) ===== -->
+        <!-- ===== NAVBAR TOP ===== -->
         <div class="navbar-top">
             <div class="page-title">
                 <span class="highlight">@yield('page-title', 'Dashboard')</span>
@@ -440,7 +455,7 @@
             <div class="user-info">
                 <div class="user-detail">
                     <div class="name">{{ Auth::user()->name ?? 'Admin' }}</div>
-                    <div class="role">User</div>
+                    <div class="role">Administrator</div>
                 </div>
                 <div class="avatar">
                     <i class="bi bi-person-fill"></i>

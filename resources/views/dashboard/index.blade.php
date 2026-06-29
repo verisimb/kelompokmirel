@@ -4,106 +4,176 @@
 @section('page-title', 'Dashboard')
 
 @section('content')
-<!-- Hero / Selamat Datang - Lebih Menarik -->
-<div class="row fade-in">
-    <div class="col-12">
-        <div class="card border-0 overflow-hidden" style="border-radius: 24px; background: linear-gradient(135deg, #4F46E5 0%, #6366F1 40%, #818CF8 70%, #A78BFA 100%); box-shadow: 0 8px 40px rgba(79,70,229,0.3); position: relative;">
-            <!-- Dekorasi Elemen -->
-            <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.06);"></div>
-            <div style="position: absolute; bottom: -80px; left: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,0.04);"></div>
-            <div style="position: absolute; top: 50%; right: 20%; width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,0.03);"></div>
-            
-            <div class="card-body p-4 p-md-5" style="position: relative; z-index: 1;">
-                <div class="row align-items-center">
-                    <div class="col-md-9">
-                        <!-- Judul -->
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <h4 class="fw-bold mb-0" style="font-size: 1.8rem; color: #ffffff; letter-spacing: -0.3px; text-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-                                Selamat Datang di SPK E-Wallet
-                            </h4>
-                        </div>
 
-                        <!-- Deskripsi -->
-                        <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.7; text-align: justify; margin-top: 8px; margin-bottom: 0; max-width: 100%;">
-                            <strong style="color: #ffffff;">Sistem Pendukung Keputusan (SPK)</strong> ini membantu Anda 
-                            <strong style="color: #FCD34D;">memilih E-Wallet terbaik</strong> di Indonesia menggunakan metode 
-                            <strong style="color: #FCD34D;">SMART</strong> (Simple Multi-Attribute Rating Technique) dengan pendekatan 
-                            <strong style="color: #ffffff;">Multi-Criteria Decision Making (MCDM)</strong> yang transparan dan mudah dipahami. 
-                            Evaluasi mencakup <strong style="color: #ffffff;">7 alternatif</strong> berdasarkan <strong style="color: #ffffff;">5 kriteria</strong> 
-                            untuk menghasilkan keputusan objektif.
-                        </p>
+<div class="fade-in">
 
-                        <!-- Badge -->
-                        <div class="d-flex flex-wrap gap-2 mt-3">
-                            <span class="badge px-3 py-2 rounded-pill" style="font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.18); color: #ffffff; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(4px);">
-                                <i class="bi bi-cpu me-1"></i> SPK
-                            </span>
-                            <span class="badge px-3 py-2 rounded-pill" style="font-size: 11px; font-weight: 600; background: rgba(252,211,77,0.2); color: #FCD34D; border: 1px solid rgba(252,211,77,0.15); backdrop-filter: blur(4px);">
-                                <i class="bi bi-star-fill me-1"></i> SMART
-                            </span>
-                            <span class="badge px-3 py-2 rounded-pill" style="font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.18); color: #ffffff; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(4px);">
-                                <i class="bi bi-wallet2 me-1"></i> E-Wallet
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center d-none d-md-block">
-                        <!-- Ikon E-Wallet yang Lebih Menarik -->
-                        <div style="position: relative; display: inline-block;">
-                            <div style="width: 110px; height: 110px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(255,255,255,0.15), inset 0 0 40px rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.12);">
-                                <i class="bi bi-wallet2" style="font-size: 52px; color: #ffffff; filter: drop-shadow(0 4px 20px rgba(255,255,255,0.3));"></i>
-                            </div>
-                            <div style="position: absolute; bottom: -8px; right: -8px; width: 32px; height: 32px; background: #FCD34D; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(252,211,77,0.4);">
-                                <i class="bi bi-star-fill" style="font-size: 16px; color: #1a1a2e;"></i>
-                            </div>
-                        </div>
-                        <div style="color:  #ffffff; font-size: 12px; letter-spacing: 1.5px; margin-top: 10px; font-weight: 300;">
-                            SPK · SMART · E-WALLET
-                        </div>
-                    </div>
-                </div>
+    {{-- ============================================================ --}}
+    {{-- BREADCRUMB --}}
+    {{-- ============================================================ --}}
+    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 16px; padding-left: 2px;">
+        <i class="bi bi-house-door me-1" style="font-size: 0.7rem;"></i>
+        <span style="color: #4F46E5; font-weight: 500;">Sistem Pendukung Keputusan</span>
+    </div>
+
+{{-- ============================================================ --}}
+{{-- HEADER (SPK E-Wallet + Logo di Tengah Area Kosong) --}}
+{{-- ============================================================ --}}
+<div style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 60%, #C7D2FE 100%); border-radius: 16px; padding: 24px 28px; border: 1px solid rgba(79,70,229,0.08); margin-bottom: 24px; display: flex; align-items: center; flex-wrap: wrap; gap: 16px;">
+
+    {{-- TEKS (max-width 70% agar ada ruang kosong di kanan) --}}
+    <div style="flex: 0 1 70%; min-width: 240px;">
+        <h4 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin: 0 0 6px 0;">
+            SPK E-Wallet
+        </h4>
+        <p style="font-size: 0.88rem; color: #334155; line-height: 1.8; margin: 0 0 12px 0; text-align: justify;">
+            SPK E-Wallet dirancang untuk membantu Anda menemukan dompet digital terbaik sesuai kebutuhan. 
+            Metode SMART yang digunakan memastikan setiap kriteria penilaian diperhitungkan secara proporsional dan transparan. 
+            Sistem ini mengevaluasi berbagai alternatif E-Wallet berdasarkan data objektif, bukan sekadar preferensi subjektif. 
+            Dengan pendekatan MCDM, Anda mendapatkan rekomendasi yang terstruktur dan mudah dipahami. 
+            Hasil akhirnya adalah keputusan yang akurat, andal, dan siap digunakan sebagai acuan.
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: rgba(79,70,229,0.15); color: #4F46E5; padding: 2px 16px; border-radius: 50px; font-size: 10px; font-weight: 600; border: 1px solid rgba(79,70,229,0.1);">SMART</span>
+            <span style="background: rgba(79,70,229,0.15); color: #4F46E5; padding: 2px 16px; border-radius: 50px; font-size: 10px; font-weight: 600; border: 1px solid rgba(79,70,229,0.1);">E-Wallet</span>
+            <span style="background: rgba(79,70,229,0.10); color: #4F46E5; padding: 2px 16px; border-radius: 50px; font-size: 10px; font-weight: 600; border: 1px solid rgba(79,70,229,0.08);">MCDM</span>
+        </div>
+    </div>
+
+    {{-- LOGO (berada di area kosong 30% sisanya, tepat di tengah-tengah) --}}
+    <div style="flex: 0 1 27%; display: flex; justify-content: center; align-items: center; min-width: 100px;">
+        <div style="text-align: center; animation: float 3s ease-in-out infinite;">
+            <div style="background: rgba(79,70,229,0.08); width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(79,70,229,0.1); backdrop-filter: blur(4px);">
+                <i class="bi bi-wallet2" style="font-size: 60px; color: #4F46E5;"></i>
             </div>
+            <div style="font-size: 0.60rem; color: #4F46E5; font-weight: 600; margin-top: 6px; letter-spacing: 1.2px;">E-WALLET</div>
         </div>
     </div>
 </div>
 
-<!-- Statistik - Hanya Kriteria & Alternatif (Diperbesar) -->
-<div class="row mt-3 g-3 fade-in fade-in-delay-1">
-    <div class="col-md-6">
-        <div class="card border-0 shadow-sm h-100" style="border-radius: 18px; border-left: 6px solid #4F46E5; transition: transform 0.2s ease;">
-            <div class="card-body d-flex align-items-center" style="padding: 20px 24px;">
-                <div class="me-3" style="background: linear-gradient(135deg, #EEF2FF, #E0E7FF); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="bi bi-list-check" style="font-size: 30px; color: #4F46E5;"></i>
-                </div>
+    {{-- ============================================================ --}}
+    {{-- STATISTIK 3 KOLOM --}}
+    {{-- ============================================================ --}}
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div style="background: #ffffff; border-radius: 14px; padding: 18px 22px; border: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between;">
                 <div>
-                    <div class="text-muted" style="font-weight: 600; font-size: 14px; letter-spacing: 0.5px;">JUMLAH KRITERIA</div>
-                    <div style="font-size: 36px; font-weight: 800; color: #1a1a2e; line-height: 1.1;">{{ $jumlahKriteria ?? 0 }}</div>
-                    <div style="font-size: 12px; color: #94a3b8;">Dimensi penilaian</div>
+                    <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Kriteria</div>
+                    <div style="font-size: 32px; font-weight: 700; color: #1a1a2e; line-height: 1.2;">{{ $jumlahKriteria ?? 0 }}</div>
+                    <div style="font-size: 11px; color: #94a3b8;">Total kriteria evaluasi</div>
+                </div>
+                <div style="background: #EEF2FF; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-list-check" style="font-size: 22px; color: #4F46E5;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div style="background: #ffffff; border-radius: 14px; padding: 18px 22px; border: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Alternatif</div>
+                    <div style="font-size: 32px; font-weight: 700; color: #1a1a2e; line-height: 1.2;">{{ $jumlahAlternatif ?? 0 }}</div>
+                    <div style="font-size: 11px; color: #94a3b8;">Total alternatif</div>
+                </div>
+                <div style="background: #ECFDF5; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-people-fill" style="font-size: 22px; color: #10B981;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div style="background: #ffffff; border-radius: 14px; padding: 18px 22px; border: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Penilaian</div>
+                    <div style="font-size: 32px; font-weight: 700; color: #1a1a2e; line-height: 1.2;">{{ $jumlahPenilaian ?? 0 }}</div>
+                    <div style="font-size: 11px; color: #94a3b8;">Total penilaian</div>
+                </div>
+                <div style="background: #FFFBEB; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-pencil-square" style="font-size: 22px; color: #F59E0B;"></i>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card border-0 shadow-sm h-100" style="border-radius: 18px; border-left: 6px solid #10B981; transition: transform 0.2s ease;">
-            <div class="card-body d-flex align-items-center" style="padding: 20px 24px;">
-                <div class="me-3" style="background: linear-gradient(135deg, #ECFDF5, #D1FAE5); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="bi bi-people-fill" style="font-size: 30px; color: #10B981;"></i>
-                </div>
-                <div>
-                    <div class="text-muted" style="font-weight: 600; font-size: 14px; letter-spacing: 0.5px;">JUMLAH ALTERNATIF</div>
-                    <div style="font-size: 36px; font-weight: 800; color: #1a1a2e; line-height: 1.1;">{{ $jumlahAlternatif ?? 0 }}</div>
-                    <div style="font-size: 12px; color: #94a3b8;">E-Wallet dievaluasi</div>
-                </div>
-            </div>
+
+    {{-- ============================================================ --}}
+    {{-- ALTERNATIF TERBAIK --}}
+    {{-- ============================================================ --}}
+    <div style="background: #ffffff; border-radius: 14px; padding: 18px 24px; border: 1px solid #f1f5f9; margin-bottom: 24px;">
+        <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px;">
+            <span style="color: #F59E0B; font-size: 12px;">★</span> Alternatif Terbaik
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+            <span style="font-size: 26px; font-weight: 700; color: #1a1a2e;">
+                @if(!empty($chartData['labels'][0] ?? null))
+                    {{ $chartData['labels'][0] }}
+                @else
+                    —
+                @endif
+            </span>
+            <span style="font-size: 18px; font-weight: 600; color: #4F46E5; background: #EEF2FF; padding: 2px 18px; border-radius: 50px; border: 1px solid #E0E7FF;">
+                @if(!empty($chartData['data'][0] ?? null))
+                    {{ number_format($chartData['data'][0] / 100, 4) }}
+                @else
+                    —
+                @endif
+            </span>
+        </div>
+        <div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">
+            Nilai preferensi tertinggi berdasarkan perhitungan metode SMART
         </div>
     </div>
+
+    {{-- ============================================================ --}}
+    {{-- TOMBOL AKSI 3 KOLOM --}}
+    {{-- ============================================================ --}}
+    <div class="row g-3">
+        <div class="col-md-4">
+            <a href="{{ route('ranking.index') }}" style="display: block; background: #ffffff; border-radius: 14px; padding: 16px 22px; border: 1px solid #f1f5f9; text-decoration: none; transition: all 0.2s ease;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Lihat Semua</div>
+                        <div style="font-size: 15px; font-weight: 600; color: #1a1a2e;">Ranking E-Wallet</div>
+                    </div>
+                    <div style="background: #EEF2FF; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-chevron-right" style="font-size: 18px; color: #4F46E5;"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ route('smart.index') }}" style="display: block; background: #ffffff; border-radius: 14px; padding: 16px 22px; border: 1px solid #f1f5f9; text-decoration: none; transition: all 0.2s ease;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Lihat Semua</div>
+                        <div style="font-size: 15px; font-weight: 600; color: #1a1a2e;">Perhitungan SMART</div>
+                    </div>
+                    <div style="background: #EEF2FF; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-chevron-right" style="font-size: 18px; color: #4F46E5;"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ route('penilaian.index') }}" style="display: block; background: #ffffff; border-radius: 14px; padding: 16px 22px; border: 1px solid #f1f5f9; text-decoration: none; transition: all 0.2s ease;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <div style="font-size: 10px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">Kelola Penilaian</div>
+                        <div style="font-size: 15px; font-weight: 600; color: #1a1a2e;">Input Nilai Alternatif</div>
+                    </div>
+                    <div style="background: #EEF2FF; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-chevron-right" style="font-size: 18px; color: #4F46E5;"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
 </div>
 
-<!-- Animasi Wave -->
+{{-- Animasi Float --}}
 <style>
-    @keyframes wave {
-        0%, 100% { transform: rotate(0deg); }
-        25% { transform: rotate(8deg); }
-        75% { transform: rotate(-8deg); }
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0px); }
     }
 </style>
+
 @endsection
