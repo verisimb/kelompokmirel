@@ -19,12 +19,10 @@ FROM composer:2 AS composer-builder
 WORKDIR /app
 
 COPY composer.json composer.lock ./
-RUN composer config --global http-multiplexing false \
-    && composer config --global prefer-ipv4 true \
-    && composer install \
+RUN composer install \
         --no-interaction \
         --no-progress \
-        --prefer-dist \
+        --prefer-source \
         --optimize-autoloader \
         --no-scripts
 
